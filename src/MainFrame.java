@@ -244,7 +244,8 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				//display.buildNum(key.value());
+				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
 			}
 		});
 		getContentPane().add(panel_22, "cell 8 3,grow");
@@ -443,6 +444,7 @@ public class MainFrame extends JFrame {
 		getContentPane().add(panel_24, "cell 7 4,grow");
 		
 		keyPanel panel_25 = new keyPanel("x");
+		panel_25.setValue("*");
 		panel_25.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -464,7 +466,8 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				//display.buildNum(key.value());
+				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
 			}
 		});
 		getContentPane().add(panel_25, "cell 8 4,grow");
@@ -683,7 +686,8 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-			//	display.buildNum(key.value());
+				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
 			}
 		});
 		getContentPane().add(panel_30, "cell 8 5,grow");
@@ -902,9 +906,8 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setMode(key.getValueStr());
-				calculator.endNum();
-				display.clear();
+				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
 			}
 		});
 		getContentPane().add(panel_19, "cell 8 6,grow");
@@ -934,8 +937,7 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.equals();
-				display.say(calculator.getResult());
+				display.say(calculator.getAnswer());
 			}
 		});
 		getContentPane().add(enterKey, "cell 9 6,grow");
