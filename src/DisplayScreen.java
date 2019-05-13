@@ -17,7 +17,7 @@ public class DisplayScreen extends JPanel {
 		this.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		this.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		displayLbl = new JLabel(displayText, SwingConstants.CENTER);
+		displayLbl = new JLabel(displayText, SwingConstants.RIGHT);
 		displayLbl.setFont(new Font("FreeSans", Font.BOLD, 30));
 		this.add(displayLbl);
 	}
