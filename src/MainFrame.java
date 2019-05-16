@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
 		// Calculator display
 		DisplayScreen display = new DisplayScreen("screen");
 		getContentPane().add(display, "height 50::, cell 1 1 9 1, grow");
-		display.say("0");
+		display.say(calculator.getAnswer());
 		
 		keyPanel panel_3 = new keyPanel("sq");
 		panel_3.addMouseListener(new MouseAdapter() {
@@ -163,8 +163,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_13, "cell 5 3,grow");
@@ -191,8 +192,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_14, "cell 6 3,grow");
@@ -219,8 +221,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_21, "cell 7 3,grow");
@@ -247,9 +250,11 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.calculate();
-				display.say(calculator.getAnswer());
+				calculator.updateValues();
 				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
+				calculator.setLastKey("opKey");
+
 			}
 		});
 		getContentPane().add(panel_22, "cell 8 3,grow");
@@ -385,8 +390,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_12, "cell 5 4,grow");
@@ -413,8 +419,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_15, "cell 6 4,grow");
@@ -441,8 +448,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_24, "cell 7 4,grow");
@@ -470,9 +478,11 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.calculate();
-				display.say(calculator.getAnswer());
+				calculator.updateValues();
 				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
+				calculator.setLastKey("opKey");
+
 			}
 		});
 		getContentPane().add(panel_25, "cell 8 4,grow");
@@ -607,8 +617,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_27, "cell 5 5,grow");
@@ -635,8 +646,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_28, "cell 6 5,grow");
@@ -663,8 +675,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(panel_29, "cell 7 5,grow");
@@ -691,9 +704,11 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.calculate();
-				display.say(calculator.getAnswer());
+				calculator.updateValues();
 				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
+				calculator.setLastKey("opKey");
+
 			}
 		});
 		getContentPane().add(panel_30, "cell 8 5,grow");
@@ -829,8 +844,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
 			}
 		});
 		getContentPane().add(zeroKey, "cell 5 6,grow");
@@ -858,8 +874,10 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setNum(key.getValueStr());
+				calculator.setNumString(key.getValueStr());
 				display.say(calculator.getNum());
+				calculator.setLastKey("numKey");
+
 			}
 		});
 		getContentPane().add(panel_10, "cell 6 6,grow");
@@ -913,9 +931,11 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.calculate();
-				display.say(calculator.getAnswer());
+				calculator.updateValues();
 				calculator.setOperator(key.getValueStr());
+				display.say(calculator.getAnswer());
+				calculator.setLastKey("opKey");
+
 			}
 		});
 		getContentPane().add(panel_19, "cell 8 6,grow");
@@ -945,10 +965,9 @@ public class MainFrame extends JFrame {
 			public void mouseReleased(MouseEvent e) {
 				keyPanel key = (keyPanel) e.getSource();
 				key.mouseUp();
-				calculator.setEqualMode(true);
-				calculator.calculate();
+				calculator.updateValues();
 				display.say(calculator.getAnswer());
-				calculator.setEqualMode(false);
+				calculator.setLastKey("equalKey");
 			}
 		});
 		getContentPane().add(enterKey, "cell 9 6,grow");
